@@ -1,0 +1,26 @@
+<%= simple_form_for([@pacient, @pacient.hemo_lunars.build]) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="inputs">
+    <%= f.input :data %>
+    <%= f.input :hemoglobina %>
+    <%= f.input :hematocrit %>
+    <%= f.input :hematii %>
+    <%= f.input :leucocite %>
+    <%= f.input :trombocite %>
+    <%= f.input :uree %>
+    <%= f.input :creatinina %>
+    <%= f.input :sodiu %>
+    <%= f.input :potasiu %>
+    <%= f.input :tgo %>
+    <%= f.input :tgp %>
+    <%= f.input :glicemie %>
+    <%= f.input :calciu %>
+    <%= f.input :fosfor %>
+    <%= f.input :inr %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

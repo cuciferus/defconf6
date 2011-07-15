@@ -1,0 +1,29 @@
+<h1>Listing pacients</h1>
+
+<table>
+  <tr>
+    <th>Nume</th>
+    <th>Prenume</th>
+    <th>Cnp</th>
+    <th>Data preluarii</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @pacients.each do |pacient| %>
+  <tr>
+    <td><%= pacient.nume %></td>
+    <td><%= pacient.prenume %></td>
+    <td><%= pacient.cnp %></td>
+    <td><%= pacient.data_preluarii %></td>
+    <td><%= link_to 'Show', pacient %></td>
+    <td><%= link_to 'Edit', edit_pacient_path(pacient) %></td>
+    <td><%= link_to 'Destroy', pacient, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Pacient', new_pacient_path %>

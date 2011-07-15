@@ -1,0 +1,22 @@
+<%= simple_form_for(@pacient) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="inputs">
+    <%= f.input :nume %>
+    <%= f.input :prenume %>
+    <%= f.input :cnp %>
+  </div>
+  <div class='inputs'>
+  <%= f.simple_fields_for :protocols do |g| %>
+    <%= g.input :data_inceperii %>
+    <h4> Selecteaza in ce program bagi pacientul </h4>
+    <%= g.select( :tip, Protocol::PROGRAME )%><br />
+    <h4> Selecteaza centru in care e luat in evidenta pacientul </h4>
+    <%= g.select(:centru, Protocol::CENTRE )%>
+  <% end %>
+</div>
+
+  <div class="actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

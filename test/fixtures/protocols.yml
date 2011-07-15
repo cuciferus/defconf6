@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  data_inceperii: 2011-07-10
+  centru: MyString
+  tip: MyString
+  pacient: 
+
+two:
+  data_inceperii: 2011-07-10
+  centru: MyString
+  tip: MyString
+  pacient: 

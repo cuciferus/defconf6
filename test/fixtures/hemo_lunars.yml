@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  data: 2011-07-10
+  hemoglobina: 1.5
+  hematocrit: 1.5
+  hematii: 1.5
+  leucocite: 1.5
+  trombocite: 1.5
+  uree: 1.5
+  creatinina: 1.5
+  sodiu: 1.5
+  potasiu: 1.5
+  tgo: 1.5
+  tgp: 1.5
+  glicemie: 1.5
+  calciu: 1.5
+  fosfor: 1.5
+  inr: 1.5
+  pacient: 
+
+two:
+  data: 2011-07-10
+  hemoglobina: 1.5
+  hematocrit: 1.5
+  hematii: 1.5
+  leucocite: 1.5
+  trombocite: 1.5
+  uree: 1.5
+  creatinina: 1.5
+  sodiu: 1.5
+  potasiu: 1.5
+  tgo: 1.5
+  tgp: 1.5
+  glicemie: 1.5
+  calciu: 1.5
+  fosfor: 1.5
+  inr: 1.5
+  pacient: 

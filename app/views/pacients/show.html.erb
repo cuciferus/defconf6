@@ -1,0 +1,95 @@
+<p id="notice"><%= notice %></p>
+<h1 align="center"> DefConf6 </h1>
+<p>
+  <b>Nume:</b>
+  <%= @pacient.nume %>
+</p>
+
+<p>
+  <b>Prenume:</b>
+  <%= @pacient.prenume %>
+</p>
+
+<p>
+  <b>Cnp:</b>
+  <%= @pacient.cnp %>
+  </p>
+<%= link_to_analize %>
+<%= link_to 'Editeaza Detaliile Pacientului', edit_pacient_path(@pacient) %> |
+<%= link_to 'Inapoi la lista de pacienti', pacients_path %><br />
+
+  <div id='tabel_nou'>
+    <table border="1">
+      <tr><th></th><% for analiza in @pacient.hemo_lunars do %>
+          <th id="evaluare_<%= analiza.id%>"> Sterge evaluare<br> Printeaza evaluare </th>
+        <% end %>
+      </tr>
+        <tr>
+      <th> Data </th>
+      <%= render :partial => 'analize/data', :collection => @pacient.hemo_lunars, :as => :analiza %>
+    </tr>
+    <tr>
+      <th > Hemoglobina<br>  Grafic </th>
+      <%= render :partial => 'analize/hemoglobina', :collection => @pacient.hemo_lunars, :as => :analiza %>
+    </tr>
+    <tr>
+      <th> Hematocrit<br>  Grafic </th>
+      <%= render :partial => 'analize/hematocrit', :collection => @pacient.hemo_lunars, :as => :analiza %>
+    </tr>
+     <tr>
+       <th> Hematii<br>  Grafic </th>
+      <%= render :partial => 'analize/hemati', :collection => @pacient.hemo_lunars, :as => :analiza %>
+    </tr>
+      <tr>
+        <th> Leucocite<br>  Grafic </th>
+      <%= render :partial => 'analize/leucocite', :collection => @pacient.hemo_lunars, :as => :analiza %>
+    </tr>
+       <tr>
+         <th> Trombocite<br>  Grafic </th>
+      <%= render :partial => 'analize/trombocite', :collection => @pacient.hemo_lunars, :as => :analiza %>
+    </tr>
+        <tr>
+          <th> Uree <br>  Grafic</th>
+      <%= render :partial => 'analize/uree', :collection => @pacient.hemo_lunars, :as => :analiza %>
+    </tr>
+   <tr>
+     <th> Creatinina<br>  Grafic </th>
+      <%= render :partial => 'analize/creatinina', :collection => @pacient.hemo_lunars, :as => :analiza %>
+    </tr>
+   <tr>
+     <th> Sodiu<br>  Grafic </th>
+      <%= render :partial => 'analize/sodiu', :collection => @pacient.hemo_lunars, :as => :analiza %>
+    </tr>
+   <tr>
+     <th> Potasiu<br>  Grafic </th>
+      <%= render :partial => 'analize/potasiu', :collection => @pacient.hemo_lunars, :as => :analiza %>
+    </tr>
+   <tr>
+     <th> TGO<br>  Grafic </th>
+      <%= render :partial => 'analize/tgo', :collection => @pacient.hemo_lunars, :as => :analiza %>
+    </tr>
+   <tr>
+     <th> TGP<br>  Grafic </th>
+      <%= render :partial => 'analize/tgp', :collection => @pacient.hemo_lunars, :as => :analiza %>
+    </tr>
+   <tr>
+     <th> Glicemie<br>  Grafic </th>
+      <%= render :partial => 'analize/glicemie', :collection => @pacient.hemo_lunars, :as => :analiza %>
+    </tr>
+   <tr>
+     <th> Calciu<br>  Grafic </th>
+      <%= render :partial => 'analize/calciu', :collection => @pacient.hemo_lunars, :as => :analiza %>
+    </tr>
+   <tr>
+     <th> Fosfor<br>  Grafic </th>
+      <%= render :partial => 'analize/fosfor', :collection => @pacient.hemo_lunars, :as => :analiza %>
+    </tr>
+   <tr>
+     <th> INR<br>  Grafic </th>
+      <%= render :partial => 'analize/inr', :collection => @pacient.hemo_lunars, :as => :analiza %>
+    </tr>
+    <th> Adauga analiza de vazut </th>
+
+</table>
+
+

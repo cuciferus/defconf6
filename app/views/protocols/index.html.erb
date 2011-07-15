@@ -1,0 +1,29 @@
+<h1>Listing protocols</h1>
+
+<table>
+  <tr>
+    <th>Data inceperii</th>
+    <th>Centru</th>
+    <th>Tip</th>
+    <th>Pacient</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @protocols.each do |protocol| %>
+  <tr>
+    <td><%= protocol.data_inceperii %></td>
+    <td><%= protocol.centru %></td>
+    <td><%= protocol.tip %></td>
+    <td><%= protocol.pacient %></td>
+    <td><%= link_to 'Show', protocol %></td>
+    <td><%= link_to 'Edit', edit_protocol_path(protocol) %></td>
+    <td><%= link_to 'Destroy', protocol, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Protocol', new_protocol_path %>

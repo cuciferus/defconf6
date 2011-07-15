@@ -1,0 +1,14 @@
+<%= simple_form_for(@protocol) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="inputs">
+    <%= f.input :data_inceperii %>
+    <%= f.input :centru %>
+    <%= f.input :tip %>
+    <%= f.association :pacient %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

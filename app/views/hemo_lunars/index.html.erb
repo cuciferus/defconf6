@@ -1,0 +1,55 @@
+<h1>Listing hemo_lunars</h1>
+
+<table>
+  <tr>
+    <th>Data</th>
+    <th>Hemoglobina</th>
+    <th>Hematocrit</th>
+    <th>Hematii</th>
+    <th>Leucocite</th>
+    <th>Trombocite</th>
+    <th>Uree</th>
+    <th>Creatinina</th>
+    <th>Sodiu</th>
+    <th>Potasiu</th>
+    <th>Tgo</th>
+    <th>Tgp</th>
+    <th>Glicemie</th>
+    <th>Calciu</th>
+    <th>Fosfor</th>
+    <th>Inr</th>
+    <th>Pacient</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @hemo_lunars.each do |hemo_lunar| %>
+  <tr>
+    <td><%= hemo_lunar.data %></td>
+    <td><%= hemo_lunar.hemoglobina %></td>
+    <td><%= hemo_lunar.hematocrit %></td>
+    <td><%= hemo_lunar.hematii %></td>
+    <td><%= hemo_lunar.leucocite %></td>
+    <td><%= hemo_lunar.trombocite %></td>
+    <td><%= hemo_lunar.uree %></td>
+    <td><%= hemo_lunar.creatinina %></td>
+    <td><%= hemo_lunar.sodiu %></td>
+    <td><%= hemo_lunar.potasiu %></td>
+    <td><%= hemo_lunar.tgo %></td>
+    <td><%= hemo_lunar.tgp %></td>
+    <td><%= hemo_lunar.glicemie %></td>
+    <td><%= hemo_lunar.calciu %></td>
+    <td><%= hemo_lunar.fosfor %></td>
+    <td><%= hemo_lunar.inr %></td>
+    <td><%= hemo_lunar.pacient %></td>
+    <td><%= link_to 'Show', hemo_lunar %></td>
+    <td><%= link_to 'Edit', edit_hemo_lunar_path(hemo_lunar) %></td>
+    <td><%= link_to 'Destroy', hemo_lunar, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Hemo lunar', new_hemo_lunar_path %>
