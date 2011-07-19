@@ -1,0 +1,15 @@
+Sun, 17 Jul 2011 12:25:33 +0300
+doc/README_FOR_APP	Sun, 10 Jul 2011 15:25:20 +0300
+app/controllers/application_controller.rb	Sun, 10 Jul 2011 15:25:20 +0300
+app/controllers/pacients_controller.rb	Fri, 15 Jul 2011 22:44:09 +0300
+app/controllers/protocols_controller.rb	Sun, 10 Jul 2011 15:40:57 +0300
+app/controllers/hemo_lunars_controller.rb	Sat, 16 Jul 2011 08:26:53 +0300
+app/helpers/application_helper.rb	Sun, 10 Jul 2011 15:25:20 +0300
+app/helpers/pacients_helper.rb	Sun, 10 Jul 2011 18:29:09 +0300
+app/helpers/protocols_helper.rb	Sun, 10 Jul 2011 15:40:57 +0300
+app/helpers/hemo_lunars_helper.rb	Sun, 10 Jul 2011 16:58:21 +0300
+app/helpers/hemo_lunar_helper.rb	Sun, 10 Jul 2011 18:10:36 +0300
+app/models/pacient.rb	Sun, 10 Jul 2011 15:57:37 +0300
+app/models/protocol.rb	Sun, 10 Jul 2011 15:57:51 +0300
+app/models/hemo_lunar.rb	Sun, 10 Jul 2011 16:58:21 +0300
+app/rapoarte/evaluare.rb	Sun, 17 Jul 2011 12:22:46 +0300

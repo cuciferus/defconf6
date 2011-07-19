@@ -15,12 +15,17 @@ class HemoLunarsController < ApplicationController
   # GET /hemo_lunars/1.json
   def show
     @hemo_lunar = HemoLunar.find(params[:id]) #asta ramane asa?
+    @pacient = Pacient.find(params[:pacient_id])
 
 
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @hemo_lunar }
-    end
+      format.pdf do 
+        send_data Evaluare.new.to_pdf(@hemo_lunar, @pacient), :filename => "salut.pdf",
+                                          :type => "application/pdf", :page_size => "A4", :layout => :portrait
+      end
+   end
   end
 
   # GET /hemo_lunars/new

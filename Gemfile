@@ -14,7 +14,7 @@ gem 'coffee-script'
 gem 'uglifier'
 gem 'therubyracer'
 gem 'simple_form', '1.4.2'
-gem 'prawn', :git => 'git://github.com/sandal/prawn.git', :tag => '0.10.2', :submodules => true
+gem 'prawn', :git => 'git://github.com/sandal/prawn.git', :tag => '0.11.1', :submodules => true
 
 gem 'jquery-rails'
 
