@@ -18,7 +18,7 @@
 <%= link_to 'Editeaza Detaliile Pacientului', edit_pacient_path(@pacient) %> |
 <%= link_to 'Inapoi la lista de pacienti', pacients_path %><br />
 
-  <div id='tabel_nou'>
+  <div id='tabel_nou' class="editabil">
     <table border="1">
       <tr><th></th><% for analiza in @pacient.hemo_lunars do %>
           <th id="evaluare_<%= analiza.id%>"> Sterge evaluare<br> <%=link_to 'Printeaza evaluare', pacient_hemo_lunar_path(@pacient, analiza.id, :format => 'pdf')%>  </th>

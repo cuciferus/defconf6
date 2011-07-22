@@ -5,7 +5,7 @@
 jQuery ->
 	$(' td'  ).click ->
 		console.log $(this).html()
-	$(".tabel_nou").editable('update', {
+	$(".editabil").editable('update', {
 		type : 'textarea',
 		cancel : 'anuleaza',
 		submit : 'OK',
