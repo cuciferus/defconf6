@@ -5,4 +5,14 @@
 jQuery ->
 	$(' td'  ).click ->
 		console.log $(this).html()
+	$(".tabel_nou").editable('update', {
+		type : 'textarea',
+		cancel : 'anuleaza',
+		submit : 'OK',
+		indicator : 'sa salveaza',
+		method : "put",
+		tooltip : 'Da click sa editezi'})
+
+
+
 

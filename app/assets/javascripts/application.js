@@ -6,4 +6,5 @@
 //
 // require jquery
 // require jquery_ujs
+//= require ../../../vendor/assets/javascripts/jquery.jeditable.mini.js
 //= require_tree .
