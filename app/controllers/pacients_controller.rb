@@ -1,4 +1,5 @@
 class PacientsController < ApplicationController
+  can_edit_on_the_spot_in_tree
   # GET /pacients
   # GET /pacients.json
   def index
@@ -68,6 +69,13 @@ class PacientsController < ApplicationController
         format.json { render json: @pacient.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def updateHemo
+    @pacient = Pacient.find(params[:id])
+    @hemo = pacient.hemo_lunars.find(params[:hemo_id])
+    @hemo.save
+    render :text => params[:value]
   end
 
   # DELETE /pacients/1

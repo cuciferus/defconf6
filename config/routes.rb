@@ -2,6 +2,8 @@ Defconf6::Application.routes.draw do
 
 
   resources :pacients do
+    collection do put :update_attribute_on_the_spot_in_tree
+    end
     resources :protocols
     resources :hemo_lunars
   end

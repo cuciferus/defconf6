@@ -17,6 +17,8 @@ gem 'simple_form', '1.4.2'
 gem 'prawn', :git => 'git://github.com/sandal/prawn.git', :tag => '0.11.1', :submodules => true
 
 gem 'jquery-rails'
+#alt test
+gem 'on_the_spot_in_tree', :git => 'https://github.com/ciscoriordan/on_the_spot_in_tree'
 
 # Use unicorn as the web server
 # gem 'unicorn'

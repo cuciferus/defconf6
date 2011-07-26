@@ -18,7 +18,11 @@
 <%= link_to 'Editeaza Detaliile Pacientului', edit_pacient_path(@pacient) %> |
 <%= link_to 'Inapoi la lista de pacienti', pacients_path %><br />
 
-  <div id='tabel_nou' class="editabil">
+<div id="charts" style="width:560px;height:300px;">
+  <img  id="chart" src=<%= asset_path "c6.png" %>>
+</div>
+
+<div id='tabel_nou'>
     <table border="1">
       <tr><th></th><% for analiza in @pacient.hemo_lunars do %>
           <th id="evaluare_<%= analiza.id%>"> Sterge evaluare<br> <%=link_to 'Printeaza evaluare', pacient_hemo_lunar_path(@pacient, analiza.id, :format => 'pdf')%>  </th>
@@ -54,7 +58,7 @@
     </tr>
    <tr>
      <th> Creatinina<br>  Grafic </th>
-      <%= render :partial => 'analize/creatinina', :collection => @pacient.hemo_lunars, :as => :analiza %>
+     <%= render :partial => 'analize/creatinina', :collection => @pacient.hemo_lunars, :as => :analiza %>
     </tr>
    <tr>
      <th> Sodiu<br>  Grafic </th>
