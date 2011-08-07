@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  nume: MyString
+  valoare: 1.5
+  unitate_masura: MyString
+  sablon: MyString
+  sablon_id: 1
+
+two:
+  nume: MyString
+  valoare: 1.5
+  unitate_masura: MyString
+  sablon: MyString
+  sablon_id: 1

@@ -19,6 +19,16 @@
     <%= f.input :fosfor %>
     <%= f.input :inr %>
   </div>
+  <%= add_analiza_atipica @pacient , "Adauga o alta analiza" %>
+  <div class="inputs">
+    <%= simple_fields_for :analiza_atipicas do |g| %>
+      <span><%= g.input :analiza %>
+      <%= g.input :valoare %>
+      <%= g.input :unitate_masura %></span>
+      <%= g.button :submit %>
+    <% end %>
+  </div>
+  <%= render 'analiza_atipica/form' %>
 
   <div class="actions">
     <%= f.button :submit %>

@@ -10,7 +10,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110710135821) do
+ActiveRecord::Schema.define(:version => 20110801194932) do
+
+  create_table "analiza_atipicas", :force => true do |t|
+    t.string   "nume"
+    t.float    "valoare"
+    t.string   "unitate_masura"
+    t.string   "sablon_type"
+    t.integer  "sablon_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "hemo_lunars", :force => true do |t|
     t.date     "data"

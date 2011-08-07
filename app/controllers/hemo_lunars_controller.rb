@@ -32,6 +32,7 @@ class HemoLunarsController < ApplicationController
   # GET /hemo_lunars/new.json
   def new
     @hemo_lunar = @pacient.hemo_lunars.new #aici de lucru
+    @analiza = @hemo_lunar.analiza_atipicas.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -49,6 +50,8 @@ class HemoLunarsController < ApplicationController
   def create
     @hemo_lunar = @pacient.hemo_lunars.create(params[:hemo_lunar])
 
+    logger.debug "Am facut un hemo nou cu parametrii #{params[:hemo_lunar]}"
+    puts  "iar analiza atipica e #{params[:analiza_atipica]}"
     respond_to do |format|
       if @hemo_lunar.save
         format.html { redirect_to @pacient, notice: 'Hemo lunar was successfully created.' }

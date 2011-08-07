@@ -1,0 +1,26 @@
+# Place all the behaviors and hooks related to the matching controller here.
+# All this logic will automatically be available in application.js.
+# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
+jQuery ->
+  options = {xaxis: { mode: "time", tickLength: 5, timeformat: "%y/%m/%d"},selection: { mode: "x"}}
+  data = [[[new Date('2012/01/01').getTime(),90],[new Date('2011/08/09').getTime(),12], [new Date('1999/12/22').getTime(), 23]], [[new Date('2012/01/01').getTime(),60],[new Date('2011/08/09').getTime(),42], [new Date('1999/12/22').getTime(), 53]]]
+  $.plot($("#charts"),data, options)
+
+  options_for_overview = {
+    series: {
+    lines: { show: true, lineWidth: 1 }, shadowSize: 0}, xaxis: { ticks: [], mode: "time"}, yaxis: {ticks: [], min: 0, autoscaleMargin: 0.1}, selection: { mode: "x"}}
+  overwiew = $.plot($("#overview"), data, options_for_overview)
+  $("#charts").bind("plotselected", $(event, ranges) ->
+      plot = $.plot(("#charts"), data, $.extend( true, {}, options, { xaxis: { min:ranges.xaxis.from, max: ranges.xaxis.to}}))
+      overview.setSelection(ranges, true))
+  $("#overview").bind(("plotselected"), $(event, ranges) ->
+    plot.setSelection(ranges))
+#jQuery ->
+#  $(".editabil").editable('update', {
+##		type : 'textarea',
+##		cancel : 'anuleaza',
+#		submit : 'OK',
+#		indicator : 'sa salveaza',
+#		method : "put",
+#		tooltip : 'Da click sa editezi'})
+#

@@ -1,5 +1,48 @@
 <p id="notice"><%= notice %></p>
 <h1 align="center"> DefConf6 </h1>
+
+<script type="text/javascript" charset="utf-8">
+  $(function grafic(json) {
+      var dati = [];
+      <% for analiza in @pacient.hemo_lunars do %>
+        dati.push([ <%= analiza.data.to_time.to_i*1000%> , <%= analiza.hemoglobina %>]);
+      <% end %>
+    var options = {
+      xaxis: { mode: "time", tickLength: 5},
+      selection: { mode: "x"},
+      series: {
+        lines: { show: true},
+        points: {show: true},
+      grid : {
+        backgroundColor: { colors: ["#fff", "#eee"]}
+        }}
+    };
+    var plot = $.plot($("#charts"),  [ { label: "hemoglobina", data: dati}] , options);
+    var overview = $.plot($("#overview"), dati, {
+      series : {
+        lines: { show: true, lineWidth: 1},
+        shadowSize: 0
+    },
+    xaxis: { ticks: [], mode: "time"},
+    yaxis: { ticks: [], min: 0, autoscaleMargin: 0.1},
+    selection: {mode: "x"}
+  });
+  $("#charts").bind("plotselected", function (event, ranges) {
+      plot = $.plot("#charts"),  dati, 
+      $.extend(true, {}, options , {
+        xaxis: { min: ranges.xaxis.from, max: ranges.xaxis.to}
+    });
+    overview.setSelection( ranges, true);
+  });
+  $("charts").bind("plotselected", function (event, ranges) {
+    plot.setSelection(ranges);
+  });
+  });
+  var stuff=  <%= @pacient.hemo_lunars.select(['hematocrit','data']).to_json.html_safe %>;
+  $('#serie-grafic').click(function () {
+      console.log('salut');
+    });
+</script>
 <p>
   <b>Nume:</b>
   <%= @pacient.nume %>
@@ -18,9 +61,8 @@
 <%= link_to 'Editeaza Detaliile Pacientului', edit_pacient_path(@pacient) %> |
 <%= link_to 'Inapoi la lista de pacienti', pacients_path %><br />
 
-<div id="charts" style="width:560px;height:300px;">
-  <img  id="chart" src=<%= asset_path "c6.png" %>>
-</div>
+<div id="charts" style="width:560px;height:300px;"></div>
+<div id="overview" style="margin-left:50px;margin-top:20px;width:400px;height:50px"></div>
 
 <div id='tabel_nou'>
     <table border="1">
@@ -33,63 +75,63 @@
       <%= render :partial => 'analize/data', :collection => @pacient.hemo_lunars, :as => :analiza %>
     </tr>
     <tr>
-      <th > Hemoglobina<br>  Grafic </th>
+      <th > Hemoglobina<br>  <button type="button" onClick="window.location='www.google.com'">Grafic</button> </th>
       <%= render :partial => 'analize/hemoglobina', :collection => @pacient.hemo_lunars, :as => :analiza %>
     </tr>
     <tr>
-      <th> Hematocrit<br>  Grafic </th>
+      <th> Hematocrit<br> <input class="serie-grafic" type="button"  value="Grafic" id="hematocrit"></th>
       <%= render :partial => 'analize/hematocrit', :collection => @pacient.hemo_lunars, :as => :analiza %>
     </tr>
      <tr>
-       <th> Hematii<br>  Grafic </th>
+       <th> Hematii<br> <button type="button" onClick="window.location='www.exemplu.com'"> Grafic </button></th>
       <%= render :partial => 'analize/hemati', :collection => @pacient.hemo_lunars, :as => :analiza %>
     </tr>
       <tr>
-        <th> Leucocite<br>  Grafic </th>
+        <th> Leucocite<br> <button type="button" onClick="window.location='www.exemplu.com'"> Grafic </button></th>
       <%= render :partial => 'analize/leucocite', :collection => @pacient.hemo_lunars, :as => :analiza %>
     </tr>
        <tr>
-         <th> Trombocite<br>  Grafic </th>
+         <th> Trombocite<br> <button type="button" onClick="window.location='www.exemplu.com'"> Grafic </button></th>
       <%= render :partial => 'analize/trombocite', :collection => @pacient.hemo_lunars, :as => :analiza %>
     </tr>
         <tr>
-          <th> Uree <br>  Grafic</th>
+          <th> Uree <br> <button type="button" onClick="window.location='www.exemplu.com'"> Grafic</button></th>
       <%= render :partial => 'analize/uree', :collection => @pacient.hemo_lunars, :as => :analiza %>
     </tr>
    <tr>
-     <th> Creatinina<br>  Grafic </th>
+     <th> Creatinina<br> <button type="button" onClick="window.location='www.exemplu.com'"> Grafic </button></th>
      <%= render :partial => 'analize/creatinina', :collection => @pacient.hemo_lunars, :as => :analiza %>
     </tr>
    <tr>
-     <th> Sodiu<br>  Grafic </th>
+     <th> Sodiu<br> <button type="button" onClick="window.location='www.exemplu.com'"> Grafic </button></th>
       <%= render :partial => 'analize/sodiu', :collection => @pacient.hemo_lunars, :as => :analiza %>
     </tr>
    <tr>
-     <th> Potasiu<br>  Grafic </th>
+     <th> Potasiu<br> <button type="button" onClick="window.location='www.exemplu.com'"> Grafic </button></th>
       <%= render :partial => 'analize/potasiu', :collection => @pacient.hemo_lunars, :as => :analiza %>
     </tr>
    <tr>
-     <th> TGO<br>  Grafic </th>
+     <th> TGO<br> <button type="button" onClick="window.location='www.exemplu.com'"> Grafic </button></th>
       <%= render :partial => 'analize/tgo', :collection => @pacient.hemo_lunars, :as => :analiza %>
     </tr>
    <tr>
-     <th> TGP<br>  Grafic </th>
+     <th> TGP<br> <button type="button" onClick="window.location='www.exemplu.com'"> Grafic </button></th>
       <%= render :partial => 'analize/tgp', :collection => @pacient.hemo_lunars, :as => :analiza %>
     </tr>
    <tr>
-     <th> Glicemie<br>  Grafic </th>
+     <th> Glicemie<br> <button type="button" onClick="window.location='www.exemplu.com'"> Grafic </button></th>
       <%= render :partial => 'analize/glicemie', :collection => @pacient.hemo_lunars, :as => :analiza %>
     </tr>
    <tr>
-     <th> Calciu<br>  Grafic </th>
+     <th> Calciu<br> <button type="button" onClick="window.location='www.exemplu.com'"> Grafic </button></th>
       <%= render :partial => 'analize/calciu', :collection => @pacient.hemo_lunars, :as => :analiza %>
     </tr>
    <tr>
-     <th> Fosfor<br>  Grafic </th>
+     <th> Fosfor<br> <button type="button" onClick="window.location='www.exemplu.com'"> Grafic </button></th>
       <%= render :partial => 'analize/fosfor', :collection => @pacient.hemo_lunars, :as => :analiza %>
     </tr>
    <tr>
-     <th> INR<br>  Grafic </th>
+     <th> INR<br> <button type="button" onClick="window.location='www.exemplu.com'"> Grafic </button></th>
       <%= render :partial => 'analize/inr', :collection => @pacient.hemo_lunars, :as => :analiza %>
     </tr>
     <th> Adauga analiza de vazut </th>

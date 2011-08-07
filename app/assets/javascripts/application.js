@@ -10,6 +10,6 @@
 //= require_tree .
 // require jquery.treeTable
 //= require jquery.jeditable.mini
-// require jquery.jeditable.datepicker
 //= require on_the_spot_in_tree
 //= require ../../../vendor/assets/javascripts/flot/jquery.flot.js
+//= require ../../../vendor/assets/javascripts/jquery.jeditable.datepicker

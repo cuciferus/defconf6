@@ -5,7 +5,12 @@ Defconf6::Application.routes.draw do
     collection do put :update_attribute_on_the_spot_in_tree
     end
     resources :protocols
-    resources :hemo_lunars
+    resources :hemo_lunars do
+      resources :analiza_atipicas
+    end
+  end
+  resources :hemo_lunars do
+    resources :analiza_atipicas
   end
 
   # The priority is based upon order of creation:

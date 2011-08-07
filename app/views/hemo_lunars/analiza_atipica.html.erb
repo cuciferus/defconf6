@@ -1,0 +1,10 @@
+<div class="analiza">
+  <% new_or_existing = analiza_atipica.new_record? ? 'new' : 'existing' %>
+  <% prefix = "hemo_lunar[#{new_or_existing}_analiza_atipica_attributes][]" %>
+  <% simple_fields_for prefix, analiza_atipica do |analiza_form| -%>
+    <p>
+    Analiza <%= analiza_form.input :nume %>
+    <%= link_to_function "remove", "$(this).up('.analiza_atipica').remove()" %>
+    </p>
+  <% end %>
+</div>
